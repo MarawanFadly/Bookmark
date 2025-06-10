@@ -1,14 +1,15 @@
 var BookmarkName = document.getElementById('BookmarkName');//object
 var BookmarkWebsite = document.getElementById('BookmarkWebsite');
 var addBtn = document.getElementById('addBtn')
-var productList;
+var websiteList;
 var currentIndex;
 
-if (localStorage.getItem('productList') !== null) {
-  productList = JSON.parse(localStorage.getItem('productList'))
+if (localStorage.getItem('websiteList') !== null) {
+
+  websiteList = JSON.parse(localStorage.getItem('websiteList'))
   display();
 } else {
-  productList = [];
+  websiteList = [];
 }
 
 isValidURLRegex(BookmarkWebsite);
@@ -32,7 +33,7 @@ function isValidNameRegex(BookmarkName) {
 
 // Add
 function addProduct() {
-  var product = {
+  var bookmarksite = {
     bookmarkName: BookmarkName.value,
     bookmarkWebsite: BookmarkWebsite.value,
   }
@@ -41,7 +42,8 @@ function addProduct() {
 
   //Bookmark Website Validation
   if (isValidURLRegex(BookmarkWebsite.value)) {
-    console.log('match')
+
+    console.log('the website is valid')
 
     validRegexURL();
 
@@ -54,8 +56,8 @@ function addProduct() {
 
   else {
 
-    console.log('nomatch')
-    
+    console.log('the website link is invalid')
+
     bodyShadow();
     function bodyShadow() {
       var element = document.getElementById('brightness');
@@ -98,14 +100,13 @@ function addProduct() {
 
 
     document.getElementById('alert-msg').innerHTML = square;
-    localStorage.setItem('productList', JSON.stringify(productList))
+    localStorage.setItem('websiteList', JSON.stringify(websiteList))
     display();
   }
 
 
   if (isValidNameRegex(BookmarkName.value)) {
-    console.log("Site name is correct")
-
+    console.log('the website name is valid')
     validRegexname();
 
     function validRegexname() {
@@ -114,7 +115,7 @@ function addProduct() {
     }
   }
   else {
-
+    console.log('the website name is invalid')
     InputNameShadow();
 
     function InputNameShadow() {
@@ -124,8 +125,8 @@ function addProduct() {
   }
 
   if (isValidNameRegex(BookmarkName.value) && isValidURLRegex(BookmarkWebsite.value)) {
-    productList.push(product)
-    localStorage.setItem('productList', JSON.stringify(productList))
+    websiteList.push(bookmarksite)
+    localStorage.setItem('websiteList', JSON.stringify(websiteList))
     display();
   }
 }
@@ -157,27 +158,31 @@ function closebtn() {
 // display
 function display() {
   var cartoona = '';
-  for (var i = 0; i < productList.length; i++) {
 
+  for (var i = 0; i < websiteList.length; i++) {
 
     cartoona += `
     <tr>
       <td class="text-black pt-sans-caption-regular">${i + 1}</td>
-      <td class="text-black text-capitalize pt-sans-caption-regular ">${productList[i].bookmarkName}</td>
-      <td class="text-black"><a href="https://${productList[i].bookmarkWebsite}" target="_blank"><button onClick="Visit (${i})" class="btn btn-visit text-capitalize"><i
+      <td class="text-black text-capitalize pt-sans-caption-regular ">${websiteList[i].bookmarkName}</td>
+      
+      <td class="text-black"><a href="https://${websiteList[i].bookmarkWebsite}" target="_blank"><button onClick="Visit (${i})" class="btn btn-visit text-capitalize"><i
       class="fa-solid fa-eye me-2"></i>visit </button></a></td>
       <td class="text-black"><button onClick="deleteProduct(${i})" class="btn btn-danger text-capitalize"> <i class="fa-solid fa-trash me-2"></i> delete</td>
     </tr> `
   }
+
   document.getElementById('table-data').innerHTML = cartoona;
-  console.log(productList)
+  console.log(websiteList)
 }
 // console.log('when open at first time', productList)
 
 // Delete
 function deleteProduct(index) {
-  productList.splice(index, 1)
-  localStorage.setItem('productList', JSON.stringify(productList))
+  websiteList.splice(index, 1)
+
+
+  localStorage.setItem('websiteList', JSON.stringify(websiteList))
   display()
 }
 
