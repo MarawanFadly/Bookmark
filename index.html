@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- //google fonts -->
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Arvo:ital,wght@0,400;0,700;1,400;1,700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Pacifico&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap">
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Arvo:ital,wght@0,400;0,700;1,400;1,700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=PT+Sans+Caption:wght@400;700&family=Pacifico&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap"
+    rel="stylesheet">
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Arvo:ital,wght@0,400;0,700;1,400;1,700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=PT+Sans+Caption:wght@400;700&family=Pacifico&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Righteous&family=Roboto:ital,wght@0,100..900;1,100..900&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap"
+    rel="stylesheet">
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Arvo:ital,wght@0,400;0,700;1,400;1,700&family=Bree+Serif&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=PT+Sans+Caption:wght@400;700&family=Pacifico&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Righteous&family=Roboto:ital,wght@0,100..900;1,100..900&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap"
+    rel="stylesheet">
+
+  <!-- fast bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/fastbootstrap@2.2.0/dist/css/fastbootstrap.min.css" rel="stylesheet"
+    integrity="sha256-V6lu+OdYNKTKTsVFBuQsyIlDiRWiOmtC8VQ8Lzdm2i4=" crossorigin="anonymous">
+
+  <!-- font Awesome -->
+  <script src="https://kit.fontawesome.com/59044d2f02.js" crossorigin="anonymous"></script>
+
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="./css/bootstrap.min.css" />
+
+  <!-- CSS  -->
+  <link rel="stylesheet" href="./css/style.css" />
+
+  <title>Bookmark </title>
+</head>
+
+<body id="brightness">
+  <div id="alert-msg">
+  </div>
+
+  <div class="w-75 m-auto p-3 my-3 ">
+    <div class="container">
+      <h1 class=" text-center text-capitalize pacifico text-black pb-2 bookmark">Bookmarker</h1>
+      <div class="highlight"></div>
+    </div>
+
+    <br />
+    <hr class="border-2 border-dotted border-dark" />
+
+    <div class="d-flex justify-content-center righteous-regular bookmark-site">
+      <i class="fa-solid fa-bookmark me-2"></i>
+      Bookmark your favorite sites
+      <i class="fa-solid fa-bookmark mx-2"></i>
+    </div>
+
+    <div class="mb-3">
+
+      <i class="fa-solid fa-book-bookmark pe-2" ; style="color:black"></i>
+      <span class="text-capitalize text-black fw-bold pt-sans-caption-regular"> site name</span>
+      <div class="pt-2">
+
+        <input type="text" class="form-control border-0 border-bottom rounded-2 text-black" id="BookmarkName"
+          placeholder="Bookmark Name">
+      </div>
+    </div>
+    <div class="mb-3">
+
+      <i class="fa-solid fa-link pe-2" ; style="color:black"></i>
+      <span class="text-capitalize fw-bold text-black pt-sans-caption-regular"> site url</span>
+
+      <div class="pt-2">
+        <input type="text" class="form-control border-0 border-bottom rounded-2 text-black" id="BookmarkWebsite"
+          placeholder="Website URL">
+      </div>
+    </div>
+
+
+    <!-- Submit button -->
+    <div class="pt-3">
+      <button onclick=addProduct() id="addBtn" class=" btn btn-submit d-grid mx-auto col-2-lg col-md-2 col-sm-2"
+        type="button"> Submit
+      </button>
+    </div>
+    <!-- Reset button -->
+    <!-- <button onclick=resetform() class="btn mx-2 btn-danger rounded-0" type="reset" id="resetBtn">Reset</button> -->
+  </div>
+
+  <hr class=" border-2 border-dotted border-dark w-75 m-auto" />
+
+  <table class="table-striped table mt-4 pt-5 w-75 m-auto">
+    <thead class="text-center">
+      <th class="text-capitalize text-black"> index</th>
+      <th class="text-capitalize text-black"> website name </th>
+      <th class="text-capitalize text-black"> visit </button></th>
+      <th class="text-capitalize text-black"> delete </th>
+    </thead>
+
+    <tbody class="text-center" id="table-data">
+
+    </tbody>
+  </table>
+
+  <script src="./js/script.js"></script>
+
+</body>
+
+</html>
