@@ -183,18 +183,12 @@ hr {
     bottom: 40px;
     z-index: -1;
     transition: transform ease-in 0.3s;
-    -webkit-transition: transform ease-in 0.3s;
-    -moz-transition: transform ease-in 0.3s;
-    -ms-transition: transform ease-in 0.3s;
-    -o-transition: transform ease-in 0.3s;
 }
 
 .container:hover .highlight {
+    height:30px;
     transform: translateY(-40%);
-    -webkit-transform: translateY(-40%);
-    -moz-transform: translateY(-40%);
-    -ms-transform: translateY(-40%);
-    -o-transform: translateY(-40%);
+    
 }
 
 /* //linear gradient text bookmark */

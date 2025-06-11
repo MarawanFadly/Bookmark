@@ -175,15 +175,59 @@ function display() {
   document.getElementById('table-data').innerHTML = cartoona;
   console.log(websiteList)
 }
-// console.log('when open at first time', productList)
+
 
 // Delete
 function deleteProduct(index) {
-  websiteList.splice(index, 1)
+
+  const swalWithBootstrapButtons = Swal.mixin({
+    customClass: {
+      confirmButton: "btn btn-success",
+      cancelButton: "btn btn-danger"
+    },
+    buttonsStyling: false
+  });
+  swalWithBootstrapButtons.fire({
+    title: "Are you sure?",
+    text: "You won't be able to revert this!",
+    icon: "warning",
+    showCancelButton: true,
+    confirmButtonText: "Yes, delete it!",
+    cancelButtonText: "No, cancel!",
+    reverseButtons: true
+  }).then((result) => {
+    if (result.isConfirmed) {
+
+     console.log("the file has been deleted!");
+
+      swalWithBootstrapButtons.fire({
+        title: "Deleted!",
+        text: "Your file has been deleted.",
+        icon: "success"
+      });
 
 
-  localStorage.setItem('websiteList', JSON.stringify(websiteList))
-  display()
+      //Updating the localstorage and array with new values
+      websiteList.splice(index, 1)
+      localStorage.setItem('websiteList', JSON.stringify(websiteList))
+      display()
+
+    } else if (
+
+      result.dismiss === Swal.DismissReason.cancel
+    ) {
+     console.log("the file hasn't been deleted!");
+      swalWithBootstrapButtons.fire({
+        title: "Cancelled",
+        text: "Your imaginary file is safe :)",
+        icon: "error"
+      });
+    }
+  });
+
+  // websiteList.splice(index, 1)
+  // localStorage.setItem('websiteList', JSON.stringify(websiteList))
+  // display()
 }
 
 // Visit
